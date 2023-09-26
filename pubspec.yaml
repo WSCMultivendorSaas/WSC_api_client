@@ -4,14 +4,13 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.0.6 <4.0.0'
+  sdk: ">=3.0.6 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   dio: ^5.3.3
   flutter:
     sdk: flutter
-  mockito: ^5.4.2
   mocktail: ^1.0.0
 
 dev_dependencies:
