@@ -65,20 +65,21 @@ class ApiClient {
 
   Future<Response> post(
     String path, {
-    Object body = const {},
+    Map<String, dynamic> body = const {},
     Map<String, dynamic> headers = const {},
     Map<String, dynamic> query = const {},
-    String? contentType,
-    bool attachToken = true,
+    String? contentType = 'application/json',
+    bool isFormData = false,
+    bool attachToken = false,
   }) async {
     final res = await dio.post(
       path,
-      data: body,
-      queryParameters: {...query},
+      data: isFormData ? FormData.fromMap(body) : body,
+      queryParameters: query,
       options: Options(
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json',
+          'Content-Type': contentType,
           ...headers,
         },
         contentType: contentType,
