@@ -78,7 +78,6 @@ class ApiClient {
       queryParameters: query,
       options: Options(
         headers: {
-          'Accept': 'application/json',
           ...headers,
         },
         contentType: contentType,
