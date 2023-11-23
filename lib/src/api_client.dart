@@ -79,7 +79,6 @@ class ApiClient {
       options: Options(
         headers: {
           'Accept': 'application/json',
-          'Content-Type': contentType,
           ...headers,
         },
         contentType: contentType,
